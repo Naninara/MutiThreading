@@ -1,0 +1,38 @@
+13.MultiThreading Java:- acheived by using a class extended by the Thread class and also by implementing runnable interface then pass into constructor of thread class
+
+    when new thread has to start then we need to override the run method in child class from thread class
+
+    then call the start method in main thread then it can be acheived
+
+    if we call the run method in main method we didnt obtain MT because run method calls only in main thread. run method refers to which thread it called.
+
+14.MT depending upon the No of cores and threads in our cpu if the threads are more than in our cores then JVM puts the execution in Thread Queue.
+
+15.Concurrency and parellism
+    concurrency:- Concurrency is when two or more tasks can start, run, and complete in overlapping time periods. It doesn't necessarily mean they'll ever both be running at the same instant. For example, multitasking on a single-core machine.
+    parallelism:-Parallelism is when tasks literally run at the same time, e.g., on a multicore processor.
+
+16.Deamon Thread:- it is a background thread in java when the deamon thread is running the main method doesn't care about the process finish from the thread is done it stopped when needed
+    we cant set our main thread as deamon because to execute the program has to depend on one thread.
+
+    syntax:- thread.setDaemon(true);
+
+17.whenever we get exception to stop the thread we can use thread.intrept() to stop the execution of thread
+
+18.Jstack (Present in JDK) it gives the information about threads which are running to get the file syntax is
+
+    jstack PID > filename.txt
+
+    PID(process id) can be obtain from taskmanager in windows and go to details then run your application then select PID
+
+    we cant easily understand thread dump there are many online tools go and paste to analyze
+
+19.Sleeping the thread:- we can sleep our thread using Thread.sleep() -> Thread refer to current thread executing.
+
+20.Syncorinization:- sychronization is the process of making the thread accesing in a queue or simply locking the object for one thread
+    Types:-
+        1.object type synchronization:-when a thread running on the refernce of a object the  another thread has to wait until it done it process
+                                        syntax:-synchronise(<reference of object>)
+
+        2.class type synchronization:- this allow that any object from the class has to be wait until one thread working on it
+                                         syntax:- synchronise(Classname.class)
